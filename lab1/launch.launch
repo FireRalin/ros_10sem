@@ -1,0 +1,7 @@
+<launch>
+    <arg name="chaser_speed" default="1.5"/>
+    <param name="chaser_speed" value="$(arg chaser_speed)"/>
+    <node pkg="turtlesim" type="turtlesim_node" name="turtlesim" output="screen"/>
+    <node pkg="turtlesim" type="turtle_teleop_key" name="victim_controller" output="screen"/>
+    <node pkg="lab" type="chaser.py" name="chaser_controller"/>
+</launch>
